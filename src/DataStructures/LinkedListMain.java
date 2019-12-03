@@ -26,6 +26,8 @@ public class LinkedListMain {
 		System.out.println(list.size());
 		int[] array =list.toArray();
 		System.out.println(Arrays.toString(array));
+		System.out.println(Arrays.toString(list.reverse1()));
+		
 	}
 
 }

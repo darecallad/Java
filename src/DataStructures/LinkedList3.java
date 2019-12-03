@@ -105,5 +105,44 @@ public class LinkedList3 {
 		}
 		return array;
 	}
-	
+	public void reverse() {
+		Node previous = first;
+		Node current = first.next;
+		
+		while(current!= null) {
+			Node next = current.next;
+			current.next = previous;
+			previous = current;
+			current = next;
+		}
+		last = first;
+		last.next = null;
+		first = previous;
+	}
+	public int getKthFromTheEnd(int k) {
+		Node a = first;
+		Node b = first;
+		for(int i = 0; i < k-1; i++) {
+			b = b.next;
+		}
+		while(b != last ) {
+			a = a.next;
+			b = b.next;
+		}
+		return a.value;
+	}
+	public void printMiddle() {
+		if(isEmpty())
+			throw new NoSuchElementException();
+		Node a = first;
+		Node b = first;
+		while(a != last && b != last) {
+			b = b.next.next;
+			a = a.next;
+		}
+		if(b == last)
+			System.out.println(a.value);
+		else
+			System.out.println(a.value + " " + a.next.value);
+	}
 }

@@ -62,10 +62,25 @@ public class Array1 {
                 newItem[i] = items[i];
             items = newItem;
         }
-        for(int i= count; i>=index; i--){
+        for(int i= count; i>index; i--){
             items[i] = items[i-1];
         }
         items[index] = item;
         count++;
+    }
+
+    public void intersect() {
+        int[] newItem = new int[count];
+
+        for (int i = 0; i < count; i++)
+            newItem[i] = items[i];
+
+        for(int i = 0; i < items.length; i ++){
+            for(int k = 0; k < newItem.length; k++){
+                if(items[i] == newItem[k]){
+                    System.out.println(newItem[k]);
+                }
+            }
+        }
     }
 }

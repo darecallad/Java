@@ -8,13 +8,14 @@ public class ArrayExercise {
 //        numbers.print();
         numbers.insert(20);
         numbers.insert(30);
-        numbers.insert(40);
+        numbers.insert(10);
 
 //        System.out.println(numbers.max());
-        numbers.print();
+//        numbers.print();
 //        numbers.reverse();
-        numbers.insertAt(20,1);
-        numbers.print();
+//        numbers.insertAt(20,1);
+//        numbers.print();
+        numbers.intersect();
 //        numbers.removeAt(1);
 //        numbers.print();
 //        System.out.println(numbers.indexOf(40));

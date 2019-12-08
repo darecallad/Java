@@ -18,7 +18,7 @@ public class stringX {
 	public static String stringX(String str) {
 		String result = "";
 		for(int i = 0; i < str.length(); i ++) {
-			if(!(i>0 && i <str.length()-1) && str.substring(i,i+2).equals("x")) {
+			if(!((i>0 && i <str.length()-1) && str.substring(i,i+2).equals("x"))) {
 			}
 		}
 		return result;

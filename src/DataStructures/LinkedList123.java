@@ -2,7 +2,7 @@ package DataStructures;
 
 import java.util.NoSuchElementException;
 
-public class LinkedList {
+public class LinkedList123 {
 
 	private Node first;
 	private Node last;

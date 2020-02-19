@@ -56,15 +56,15 @@ public class BinaryTreeLevelOrderTraversalII {
             Collections.reverse(res);
 
             return res;
-        
+
     }
     private class TreeNode{
         int val;
         TreeNode left;
         TreeNode right;
 
-        public TreeNode(int x){
-            x = val;
+        TreeNode(int x){
+            val = x;
         }
     }
 }

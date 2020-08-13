@@ -1,0 +1,43 @@
+The GUI
+
+Take a look at the chapter on Binary Search Trees in the text book.  There is an example of a GUI for a BST.  You should take this example and adapt it to work with the Red-Black Tree.
+You will want to implement this ASAP as you will need a good representation of a tree to test whether or not the other parts of your program are functional.
+Your GUI should have a way to add new values to the tree and display the updated tree with the correct coloring.  Also be sure to show the NIL leaves.
+The GUI must also be loosely coupled from your program.  This means that the GUI code should be completely separate from the backend code.  I should be able to swap out your GUI for an instance of another one, and your program should still work with the new GUI.
+Your program must display the tree in a GUI or I will not grade your submission as it will be difficult to confirm that your tree is working the way it is supposed to.
+Feel free to make a really nice GUI based on the original code (or figure out your own).  If I am really impressed I will give you extra credit (up to 50 points extra).
+The Node Class
+Your node class should include member variables for the key and value you want to store in the node as well as member variables which are pointers to the left and right subtrees, and the parent of the node.
+You will also want to keep track of the color of the node.
+Add any additional methods / constructors you feel will help.  If you are unsure of your design you MUST talk to me ahead of time for approval.
+
+
+The RBTree Class
+
+The RBTree class should have a member variable that points to the root node of the entire tree.
+The RBTree class should have a constant member variable Node with a value of null for its key, null for its value, and all of its pointers are also null.  This will be your special NIL leaf that is required of the RBTree.  This special node should only have one instantiation in memory (I will be looking for this.)
+Add whatever constructors you feel are necessary.
+You will want to include the following functionality:
+a way to find the grandparent of any given node
+remember to check for cases where a node might not have a grandparent.
+a way to find the uncle of any given node
+remember to check for cases where a node might not have an uncle.
+a left rotate function
+remember to update the parent pointer of each node that changes
+remember to connect the correct node back into the tree after the rotation
+a right rotate function
+remember to update the parent pointer of each node that changes
+remember to connect the correct node back into the tree after the rotation
+a function to start the insertion process of a new node. (most likely a helper method that calls other methods.)
+a function the performs a normal binary search tree insertion (this will be used by your insert method)
+a function which checks to see if the tree violates any of the rules of a RB tree and makes the necessary corrections
+use the algorithm from the lecture slides.
+this will be used by your insert method
+add functions for all of the traversals.  these functions should return an ArrayList of Nodes in the correct order.  you should also incorporate these into your gui (have buttons that can show the results of each traversal).
+NOTE: You must implement these WITHOUT using recursion.
+preorder: HINT: You will need to use a Stack to implement preorder nonrecursively.  Research how to use the Stack class in Java.
+inorder: HINT: You will need to use a Stack to implement inorder nonrecursively.  Research how to use the Stack class in Java.
+postorder: HINT: You will need to use a Stack and a Set to implement postorder nonrecursively.  The Set will store nodes that have already been visited.  Also you will need to keep track of if you are returning from the left or right subtree.
+breadth-first: HINT: You will need to use a Queue to implement breadth-first.  Research how to use a Queue in Java.
+add any other functionality you feel is necessary.  If you are unsure of something be sure to have your design approved by me ahead of time.
+Think very carefully about what should be public, private, and protected in your implementation.  I will be deducting points when things have the wrong access modifiers.

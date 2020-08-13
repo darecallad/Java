@@ -1,0 +1,89 @@
+The Node Class
+
+Member Variables
+This class shall have one member variable called category1 which will store information related to the first grouping category.  This data field shall be generic and shall have package-level access.
+This class shall have one member variable called category2 which will store information related to the second grouping category.  This data field shall be generic and shall have package-level access.
+This class shall have one member variable called category3 which will store information related to the third grouping category.  This data field shall be generic and shall have package-level access.
+This class shall have one member variable called right which is a pointer to the next item in the main list.  This data field shall have package-level access.
+This class shall have one member variable called left which is a pointer to the previous item in the main list.  This data field shall have package-level access.
+This class shall have one member variable called down which is a pointer to the next item in the sub-list This data field shall have package-level access.
+No other member variables are allowed.
+Constructor
+This class shall have one constructor which has parameters to initialize the three category data fields.
+No other constructors are allowed.
+Methods:
+This class shall have getters for each of the three category variables.
+Node<Integer, String, String> node = new Node<Integer, String, String>(27, "blue", "musician");
+
+
+The LinkedList Class
+This will be the class which is responsible for all of the functionality of your LinkedList.  This must be a Generic class where the generic parameter types could each be different.  An example of instantiating a LinkedList might be:
+
+LinkedList<Integer, String, String> list = new LinkedList<Integer, String, String>();
+
+NOTE: The parameterized types will be the same type and in the same order as the parameterized types for the Nodes for this list.
+
+The key with properly designing this class is in how a new node is added to your list.  All nodes will be grouped together based on one of the three categories from the Node class.  At any given time, the user can choose how to group the nodes, and the initial grouping will always use the first category.  Nodes which have the same value in the current grouping category. will be added to the same sub-list.  Nodes which do not have the same value as any of the existing sub-lists will be added to the main list.
+
+Example: Lets say I have five people P1, P2, P3, P4, and P5, and each person has the following values in their respective categories (age, eye color, profession):
+
+P1: 25, blue, doctor
+P2: 34, brown, pilot
+P3: 25, brown, uber driver
+P4: 25, green, doctor
+P5: 34, green, uber driver
+
+
+Member Variables:
+This class shall have one member variable called head which will store a pointer to the first Node in the LinkedList.
+This class shall have one member variable called size which will store the total number of elements in the list (this includes all nodes in the main list as well as the sub lists).  This should be a read-only property which cannot be changed outside of the LinkedList class.
+This class shall have one member variable called category1Label which will store the label for category1 from the Node class. This should be a read-only property which cannot be changed once the initial list has been created.  In the above example, the label for category1 would be "Age".
+This class shall have one member variable called category2Label which will store the label for category2 from the Node class. This should be a read-only property which cannot be changed once the initial list has been created.  In the above example, the label for category1 would be "Eye Color".
+This class shall have one member variable called category3Label which will store the label for category1 from the Node class. This should be a read-only property which cannot be changed once the initial list has been created.  In the above example, the label for category1 would be "Profession".
+This class shall have one member variable called groupingCategory which will store the current category number upon which the list should be grouped. The default grouping category is category1.
+No other member variables are allowed.
+Constructors:
+This class shall have one no-arg constructor which creates an empty list.
+This class shall have one constructor which takes an integer parameter, which is the number of the current category upon which you want your list to group.  This constructor should also create an empty list.
+This class shall have one constructor which takes a File object parameter and an integer parameter.  This File is the input file from which a list can be generated and populated.  The integer parameter is the current grouping property.  See below for the required format of the input file.  This constructor should take the File and create a list based on the values in the File.
+Methods:
+NOTE: These methods should be implemented with generics in mind.  It will be your job to figure out how to do this.
+add(value1, value2, value3):
+This method shall have three parameters.  These parameters are the values of the categories in a Node.
+Use the parameters to create a new Node and add it to the list.
+The Node must be added in such a way that it maintains the current grouping category of the list.
+clear():
+This method shall clear the list.
+deleteFirst():
+This method shall delete the first Node in the main list.
+This method shall NOT delete any nodes in the first Node's sublist.  The remaining Nodes in the sublist should be "reattached" to the beginning of the main list.
+deleteLast():
+This method shall delete the last Node in the main list.
+This method shall NOT delete any nodes in the last Node's sublist.  The remaining Nodes in the sublist should be "reattached" to the end of the main list.
+delete(mainIndex, subIndex):
+This method shall delete a specific node from anywhere in the list, given the mainIndex and subIndex.
+This method should ONLY delete the requested Node and should "reconnect" any Nodes that may be attached to the deleted Node.
+get(mainIndex, category):
+This method shall have an integer parameter, mainIndex, which is an index (starting from 0) which indicates the Node from the main branch you want to retrieve.
+This method shall have another integer parameter, category, which is a category number (1 - 3) that will indicate which category's value you want to retrieve.
+This method shall return the chosen category value, from the chosen Node in the main list.  The category value should be returned as a String.
+If the index is out of bounds, this method should throw an IndexOutOfBoundsException with an appropriate error message indicating whether it was the main index or category value that was out of bounds.
+get(mainIndex, subIndex, category):
+This method shall have an integer parameter, mainIndex, which is an index (starting from 0) which indicates the Node from the main branch you want to retrieve.
+This method shall have an integer parameter, subIndex, which is an index (starting from 0) which indicates the Node from the sub-list of the chosen main branch Node.
+This method shall have another integer parameter, category, which is a category number (1 - 3) that will indicate which category's value you want to retrieve.
+This method shall return the value from the chosen category, in the indicated sub-list.  The category value should be returned as a String.
+If any of the parameters are out of bounds, this method should throw an IndexOutOfBoundsException with an appropriate error message indicating whether it was the main index, sub index or category value that was out of bounds.
+regroup(groupingCategoryNumber):
+This method shall be responsible for regrouping your LinkedList based on the given regrouping category number.
+Example: I could take the above list from the diagram, which was initially grouped based on the Age category (category 1), and I could regroup the list based on the Profession category (category 3).
+If the groupingCategoryNumber is out of bounds, display an IndexOutOfBoundsException with an appropriate error message.
+size():
+This method shall return the size of the main list.
+The size is the number of nodes in the main list.
+size(index):
+This method shall return the size of the sub-list at the given index.
+If the given index is out of bounds, this method should throw an IndexOutOfBoundsException with an appropriate error message.
+No other methods are allowed, except you may add a toString() method for testing purposes only.
+
+

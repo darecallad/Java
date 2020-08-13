@@ -1,0 +1,30 @@
+HashTable Guidelines
+Implement your HashTable (Please call the class HashTable) in any way you see fit.  Any questions about implementation should be cleared by me first.
+Your table should keep track of a Load Factor.  When the computed load factor is higher than the threshold you decide upon, you will need to resize and rehash your table.
+Think very carefully about what the initial size of the table should be, the initial size is not allowed to be anything over 20 to start.
+When you have to resize your table, think very carefully about what the new size should be.
+Play around with different values for the threshold load factor.  This may drastically change the performance of your table.
+Decide on a way to handle collisions:
+You may NOT use separate chaining.
+For open addressing you can use linear or quadratic probing, or double hashing.
+Play around with these different options to see which one gives the best performance.
+Hash Functions
+For the primary hash function ( h(word) ), use the formula for hashing a string (from the lecture notes).  Use 31 for the value of b in the formula.
+For the secondary hash function ( h`(word) ) (if you choose to use double hashing).  Take the result of the first hash function and use it in the following formula:
+h(word) gives you the result of the primary hash function from the lecture notes.
+h`(word) = 7 - (h(word) % 7)
+Think very carefully where the primary (and optionally secondary) hash functions should go.
+Test Class Requirements
+Please provide a HashTableTest class with the following two static methods.
+Please provide a method called generateSimpleList() which takes no parameters and returns the unsorted, populated SimpleList.
+Please provide a method called generateHashTable() which takes no parameters and returns the unsorted, populated HashTable.
+If this class and these two methods are not implemented I will not grade your submission.
+Results (Output)
+Your program should generate the following output:
+
+The program should generate a text file that includes the output of your populated SimpleList.  It should very cleanly show the data of each entry (word and its count).  The output should be sorted alphabetically. (Do not include the sorting in the time measurement.)
+The program should generate a second text file that includes the output of your populated HashTable.  It should very cleanly show the data of each entry (word and its count).  The output should be sorted alphabetically. (Do not include the sorting in the time measurement.)
+The program should calculate the time it takes each implementation (SimpleList vs HashTable) to complete the population.
+NOTE: For accurate measurements you cannot process both populations at the same time.  You will need to do two separate file reads / processing to give a fair and accurate measurement.
+Be sure that you do not perform any console writing or file writing in the methods which generate the SimpleList and HashTable.  This will slow down your algorithm significantly.
+The program should also show the number of entries in the populated SimpleList and the number of entries in the populated HashTable.  These numbers should be exactly the same.  (The word counts should be exactly the same as well).

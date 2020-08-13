@@ -1,0 +1,7 @@
+PMImage API
+Constructor:
+PPMImage(File image): Takes a File object that is a PPM image.  Loads the image data into the object.  The image must be a PPM image or the program will throw a Runtime Error.
+Public Methods:
+writeImage(String filename): Takes a string which is the name of the file to write the image data to.  This will create a new file with the given name and write all of the image data into the file.  If you only give the file name, then image will be written to the current working directory of the project.
+getPixelData(): Returns the char array that holds the color values of each pixel.  I used a char array because it is the closest thing in Java to an unsigned byte datatype since char in Java cannot be negative.  char is 2 bytes in Java so be sure to only work with the lower byte and lower 8 bits (least significant byte and least significant bits.)
+
